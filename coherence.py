@@ -29,7 +29,35 @@ coherence_eval_result = coherence_eval(
 )
 
 result = f"""
+パターン1
+Coherence Evaluation Result:
+- Coherence Reason: {coherence_eval_result['coherence_reason']}
+- GPT Coherence: {coherence_eval_result['gpt_coherence']}
+- Coherence Value: {coherence_eval_result['coherence']}
+- Coherence Result: {coherence_eval_result['coherence_result']}
+- Coherence Threshold: {coherence_eval_result['coherence_threshold']}
+"""
 
+print(result)
+
+coherence_eval = CoherenceEvaluator(model_config=model_config, threshold=3)
+coherence_eval_result = coherence_eval(
+    query="""
+地球温暖化の主な原因をいくつか説明してください。
+""", 
+    response="""
+まず第一に、最大の原因は化石燃料の燃焼です。
+発電や輸送のために石炭、石油、天然ガスが燃やされると、大量の二酸化炭素が大気中に排出されます。
+このガスが温室効果を強め、地球の気温を上昇させているのです。
+
+次に重要なのは、森林破壊です。
+木々は「地球の肺」として機能し、大気中の二酸化炭素を吸収しますが、大規模な伐採によってこの天然の吸収源が減少しています。
+さらに、農業や産業プロセスからも、メタンや亜酸化窒素といった強力な温室効果ガスが排出されています。
+"""
+)
+
+result = f"""
+パターン2
 Coherence Evaluation Result:
 - Coherence Reason: {coherence_eval_result['coherence_reason']}
 - GPT Coherence: {coherence_eval_result['gpt_coherence']}
