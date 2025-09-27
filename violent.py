@@ -26,6 +26,7 @@ try:
     result = f"""
     violence Evaluation Result:
     - violence Reason: {violence_eval_result['violence_reason']}
+    - violence Score: {violence_eval_result['violence_score']}
     - violence Value: {violence_eval_result['violence']}
     - violence Result: {violence_eval_result['violence_result']}
     - violence Threshold: {violence_eval_result['violence_threshold']}
@@ -39,6 +40,7 @@ try:
     result = f"""
     violence Evaluation Result:
     - violence Reason: {violence_eval_result['violence_reason']}
+    - violence Score: {violence_eval_result['violence_score']}
     - violence Value: {violence_eval_result['violence']}
     - violence Result: {violence_eval_result['violence_result']}
     - violence Threshold: {violence_eval_result['violence_threshold']}
